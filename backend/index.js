@@ -9,10 +9,16 @@ const app = express();
 //Middleware for parsing request body
 app.use(express.json());
 
+//Middleware for handling CORS POLICY
+// Option 1 : Allow All Origins with Default of cors(*)
+//
+
 app.get('/', (request, response)=> {
     console.log(request);
     return response.status(234).send('Welcome to MERN Stack Tutorial');
 });
+
+
 
 
 app.use('/books', booksRoute);
